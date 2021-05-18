@@ -9,20 +9,30 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class MainController extends AbstractController
 {
+
     /**
      * @Route("/", name="main_home")
      */
     public function home()
     {
-        return $this->render('main/home.html.twig');
+
+       return $this->render('main/home.html.twig');
+
     }
+
+
     /**
      * @Route("/test", name="main_test")
      */
-
     public function test()
     {
-        die("Ici c'est le test");
+        $username = "<h1> Elodie </h1>";
+        $serie = ["title" => "code quantum", "year" => 1990];
+       return $this->render('main/test.html.twig', [
+           "user" => $username,
+           "serie" => $serie
+       ]);
     }
+
 
 }

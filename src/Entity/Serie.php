@@ -121,7 +121,7 @@ class Serie
     private $dateModified;
 
     /**
-     * @ORM\OneToMany(targetEntity=Season::class, mappedBy="serie")
+     * @ORM\OneToMany(targetEntity=Season::class, mappedBy="serie", cascade={"remove"})
      */
     private $seasons;
 
